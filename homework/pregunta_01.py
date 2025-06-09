@@ -30,3 +30,4 @@ def pregunta_01():
 
     return total
 
+

@@ -5,7 +5,17 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
-from pregunta_01 import read_dataset
+def read_dataset(filepath):
+    """
+    Reads a tab-separated CSV file and returns a list of rows,
+    where each row is a list of column values.
+    """
+    rows = []
+    with open(filepath, "r") as file:
+        for line in file:
+            cols = line.strip().split("\t")
+            rows.append(cols)
+    return rows
 
 def pregunta_05():
     """
@@ -33,5 +43,6 @@ def pregunta_05():
         maximum, minimum = results[letter]
         final_result.append((letter, maximum, minimum))
     return final_result
+
 
 
