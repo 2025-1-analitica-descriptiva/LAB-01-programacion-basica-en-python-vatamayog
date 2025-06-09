@@ -46,4 +46,3 @@ def pregunta_06():
     result = [(key, key_values[key][0], key_values[key][1]) for key in sorted(key_values.keys())]
     return result
 
-print(pregunta_06())

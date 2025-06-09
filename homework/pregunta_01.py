@@ -19,7 +19,7 @@ def read_dataset(filepath):
 
 def pregunta_01():
     """
-    Retorne la sum de la segunda columna.
+    Retorne la suma de la segunda columna.
 
     Rta/
     214
@@ -27,7 +27,6 @@ def pregunta_01():
     """
     data = read_dataset("files/input/data.csv")
     total = sum(int(row[1]) for row in data)
+
     return total
 
-
-print(pregunta_01())

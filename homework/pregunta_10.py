@@ -31,4 +31,3 @@ def pregunta_10():
 
     return result
 
-print(pregunta_10())

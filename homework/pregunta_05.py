@@ -34,4 +34,4 @@ def pregunta_05():
         final_result.append((letter, maximum, minimum))
     return final_result
 
-print(pregunta_05())
+

@@ -29,4 +29,3 @@ def pregunta_02():
     return result
 
 
-print(pregunta_02())

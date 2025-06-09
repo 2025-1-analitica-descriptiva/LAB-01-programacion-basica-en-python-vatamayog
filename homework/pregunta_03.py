@@ -9,8 +9,8 @@ from pregunta_01 import read_dataset
 
 def pregunta_03():
     """
-    Return the sum of column 2 for each letter in the first column as
-    a list of tuples (letter, sum) sorted alphabetically.
+    Retorne la suma de la columna 2 por cada letra de la primera columna como
+    una lista de tuplas (letra, suma) ordendas alfabeticamente.
 
     Rta/
     [('A', 53), ('B', 36), ('C', 27), ('D', 31), ('E', 67)]
@@ -26,4 +26,3 @@ def pregunta_03():
     result = sorted(letter_sum.items())
     return result
 
-print(pregunta_03())

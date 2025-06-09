@@ -36,4 +36,3 @@ def pregunta_04():
     result = sorted(months.items())
     return result
 
-print(pregunta_04())

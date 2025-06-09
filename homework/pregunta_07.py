@@ -40,4 +40,4 @@ def pregunta_07():
     result = [(value, value_letters[value]) for value in sorted(value_letters.keys())]
     return result
 
-print(pregunta_07())
+

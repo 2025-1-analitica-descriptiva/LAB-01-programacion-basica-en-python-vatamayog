@@ -28,4 +28,3 @@ def pregunta_12():
     # Retornar el diccionario ordenado por las letras
     return dict(sorted(sums.items()))
 
-print(pregunta_12())

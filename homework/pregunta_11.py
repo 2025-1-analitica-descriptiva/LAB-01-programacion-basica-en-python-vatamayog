@@ -28,4 +28,4 @@ def pregunta_11():
 
     return dict(sorted(sums.items()))
 
-print(pregunta_11())
+

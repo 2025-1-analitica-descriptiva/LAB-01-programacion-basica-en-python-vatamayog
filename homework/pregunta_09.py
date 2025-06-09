@@ -36,5 +36,3 @@ def pregunta_09():
     return dict(sorted(key_count.items()))
 
 
-
-print(pregunta_09())
