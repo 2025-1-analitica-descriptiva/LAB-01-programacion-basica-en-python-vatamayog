@@ -6,6 +6,8 @@ utilizar pandas, numpy o scipy.
 """
 
 
+from pregunta_01 import read_dataset
+
 def pregunta_07():
     """
     Retorne una lista de tuplas que asocien las columnas 0 y 1. Cada tupla
@@ -23,5 +25,19 @@ def pregunta_07():
      (7, ['A', 'C', 'E', 'D']),
      (8, ['E', 'D', 'E', 'A', 'B']),
      (9, ['A', 'B', 'E', 'A', 'A', 'C'])]
-
     """
+    data = read_dataset("files/input/data.csv")
+    value_letters = {}
+
+    for row in data:
+        letter = row[0]
+        value = int(row[1])
+        if value not in value_letters:
+            value_letters[value] = [letter]
+        else:
+            value_letters[value].append(letter)
+
+    result = [(value, value_letters[value]) for value in sorted(value_letters.keys())]
+    return result
+
+print(pregunta_07())

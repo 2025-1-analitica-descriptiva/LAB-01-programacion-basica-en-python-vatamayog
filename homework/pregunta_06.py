@@ -5,6 +5,7 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+from pregunta_01 import read_dataset
 
 def pregunta_06():
     """
@@ -26,3 +27,23 @@ def pregunta_06():
      ('jjj', 5, 17)]
 
     """
+    data = read_dataset("files/input/data.csv")
+    key_values = {}
+
+    for row in data:
+        items = row[4].split(',')
+        for item in items:
+            key, value = item.split(':')
+            value = int(value)
+            if key not in key_values:
+                key_values[key] = [value, value]
+            else:
+                if value < key_values[key][0]:
+                    key_values[key][0] = value
+                if value > key_values[key][1]:
+                    key_values[key][1] = value
+
+    result = [(key, key_values[key][0], key_values[key][1]) for key in sorted(key_values.keys())]
+    return result
+
+print(pregunta_06())

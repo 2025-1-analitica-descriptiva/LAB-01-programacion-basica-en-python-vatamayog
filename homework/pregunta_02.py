@@ -5,6 +5,8 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+from pregunta_01 import read_dataset
+
 
 def pregunta_02():
     """
@@ -14,4 +16,17 @@ def pregunta_02():
     Rta/
     [('A', 8), ('B', 7), ('C', 5), ('D', 6), ('E', 14)]
 
+
+
     """
+    data = read_dataset("files/input/data.csv")
+    count = {}
+    for row in data:
+        letter = row[0]
+        count[letter] = count.get(letter, 0) + 1
+
+    result = sorted(count.items())
+    return result
+
+
+print(pregunta_02())

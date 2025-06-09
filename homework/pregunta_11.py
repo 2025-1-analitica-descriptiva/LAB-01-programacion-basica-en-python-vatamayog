@@ -5,6 +5,7 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+from pregunta_01 import read_dataset
 
 def pregunta_11():
     """
@@ -16,3 +17,15 @@ def pregunta_11():
 
 
     """
+    data = read_dataset("files/input/data.csv")
+    sums = {}
+
+    for row in data:
+        value = int(row[1])
+        letras = row[3].split(',')
+        for letra in letras:
+            sums[letra] = sums.get(letra, 0) + value
+
+    return dict(sorted(sums.items()))
+
+print(pregunta_11())

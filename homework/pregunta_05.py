@@ -5,6 +5,7 @@ solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
 
+from pregunta_01 import read_dataset
 
 def pregunta_05():
     """
@@ -15,3 +16,22 @@ def pregunta_05():
     [('A', 9, 2), ('B', 9, 1), ('C', 9, 0), ('D', 8, 3), ('E', 9, 1)]
 
     """
+    data = read_dataset("files/input/data.csv")
+    results = {}
+    for row in data:
+        letter = row[0]
+        value = int(row[1])
+        if letter not in results:
+            results[letter] = [value, value]
+        else:
+            if value > results[letter][0]:
+                results[letter][0] = value
+            if value < results[letter][1]:
+                results[letter][1] = value
+    final_result = []
+    for letter in sorted(results.keys()):
+        maximum, minimum = results[letter]
+        final_result.append((letter, maximum, minimum))
+    return final_result
+
+print(pregunta_05())

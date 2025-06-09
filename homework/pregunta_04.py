@@ -4,7 +4,7 @@ datos requeridos se encuentran en el archivo data.csv. En este laboratorio
 solo puede utilizar las funciones y librerias basicas de python. No puede
 utilizar pandas, numpy o scipy.
 """
-
+from pregunta_01 import read_dataset
 
 def pregunta_04():
     """
@@ -24,5 +24,16 @@ def pregunta_04():
      ('10', 2),
      ('11', 2),
      ('12', 3)]
-
     """
+    data = read_dataset("files/input/data.csv")
+    months = {}
+
+    for row in data:
+        date = row[2]
+        month = date.split('-')[1]
+        months[month] = months.get(month, 0) + 1
+
+    result = sorted(months.items())
+    return result
+
+print(pregunta_04())
